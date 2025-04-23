@@ -1,25 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [".env.mongodb"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/app.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/app.ts"
-    }
-  ],
-  "env": {
-    "MONGODB_URI": "mongodb+srv://joulthewiz:Om8SeLHPGWZNjIep@cluster0.wifdbwm.mongodb.net/botx-db?retryWrites=true&w=majority&appName=Cluster0"
-  }
+  "buildCommand": "yarn build",
+  "devCommand": "yarn dev",
+  "installCommand": "yarn install",
+  "framework": "nextjs",
+  "outputDirectory": ".next"
 }

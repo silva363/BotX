@@ -1,11 +1,13 @@
-module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    testPathIgnorePatterns: ['/node_modules/', '/dist/'],
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-    roots: ['<rootDir>/src'],
-    transform: {
-      '^.+\\.tsx?$': 'ts-jest',
-    },
-  };
-  
+import type { Config } from 'jest'
+import nextJest from 'next/jest.js'
+ 
+const createJestConfig = nextJest({
+  dir: './',
+})
+ 
+const config: Config = {
+  coverageProvider: 'v8',
+  testEnvironment: 'node'
+}
+ 
+export default createJestConfig(config)
